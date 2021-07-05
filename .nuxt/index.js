@@ -12,6 +12,9 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
+import nuxt_plugin_pluginclient_4edd8bb8 from 'nuxt_plugin_pluginclient_4edd8bb8' // Source: ./content/plugin.client.js (mode: 'client')
+import nuxt_plugin_pluginserver_3e4aabac from 'nuxt_plugin_pluginserver_3e4aabac' // Source: ./content/plugin.server.js (mode: 'server')
+
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
 
@@ -60,7 +63,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"konstantinvoronoy","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My super-excellent Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+    head: {"title":"Константин Вороной","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My super-excellent Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
 
     router,
     nuxt: {
@@ -173,6 +176,14 @@ async function createApp(ssrContext, config = {}) {
     }
   }
   // Plugin execution
+
+  if (process.client && typeof nuxt_plugin_pluginclient_4edd8bb8 === 'function') {
+    await nuxt_plugin_pluginclient_4edd8bb8(app.context, inject)
+  }
+
+  if (process.server && typeof nuxt_plugin_pluginserver_3e4aabac === 'function') {
+    await nuxt_plugin_pluginserver_3e4aabac(app.context, inject)
+  }
 
   // Lock enablePreview in context
   if (process.static && process.client) {

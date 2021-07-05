@@ -3,7 +3,6 @@
     "name": "index",
     "path": "/",
     "component": "/Users/konstantinvoronoy/Sites/konstantinvoronoy/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_2ea7dde0"
+    "chunkName": "pages/index"
   }
 ]
