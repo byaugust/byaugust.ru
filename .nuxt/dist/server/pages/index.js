@@ -60,12 +60,12 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./pages/index.vue?vue&type=template&id=3ce43cea&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"w-full mx-auto h-full py-0 my-0 "},[_vm._ssrNode("<div class=\"lg:w-6/12 w-full md:w-10/12 mx-auto content lg:py-24 md:py-16 py-8 px-4 md:px-0\">","</div>",[_vm._ssrNode("<div class=\"w-40 h-40 rounded-full shadow-sm mb-6\"><img"+(_vm._ssrAttr("src",__webpack_require__(28)))+" alt class=\"h-full w-full rounded-full\"></div> <h2 class=\"md:text-2xl text-xl font-medium mb-2\">Привет, я — Костя 🖖</h2> <p class=\"md:text-lg text-base font-normal mb-4\">Днем преподаю английский, по ночам пишу код. Здесь документирую: что делаю, что сделал, что узнал нового, что получилось, что не получилось и т.п.</p> "),_vm._l((_vm.posts),function(post){return _vm._ssrNode("<div class=\"border-b border-gray-200 border-dashed py-12\">","</div>",[_vm._ssrNode("<span><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" class=\"h-6 w-6 text-indigo-400 mb-6\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 10V3L4 14h7v7l9-11h-7z\"></path></svg></span> <h1 class=\"text-xl font-medium mb-4\">"+_vm._ssrEscape("\n\n                "+_vm._s(post.title)+"\n            ")+"</h1> "),_c('nuxt-content',{attrs:{"document":post}})],2)})],2)])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./pages/index.vue?vue&type=template&id=1ee0056e&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"w-full mx-auto h-full py-0 my-0 "},[_vm._ssrNode("<div class=\"lg:w-6/12 w-full md:w-10/12 mx-auto content lg:py-24 md:py-16 py-8 px-4 md:px-0\">","</div>",[_vm._ssrNode("<div class=\"w-40 h-40 rounded-full shadow-sm mb-6\"><img"+(_vm._ssrAttr("src",__webpack_require__(28)))+" alt class=\"h-full w-full rounded-full\"></div> <h2 class=\"md:text-2xl text-xl font-medium mb-2\">Привет, я — Костя 🖖</h2> <p class=\"md:text-lg text-base font-normal mb-4\">Днем преподаю английский, по ночам пишу код. Здесь документирую: что делаю, что сделал, что узнал нового, что получилось и т.п.</p> "),_vm._l((_vm.posts),function(post){return _vm._ssrNode("<div class=\"border-b border-gray-200 border-dashed py-12\">","</div>",[_vm._ssrNode("<span><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" class=\"h-6 w-6 text-indigo-400 mb-6\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 10V3L4 14h7v7l9-11h-7z\"></path></svg></span> <h1 class=\"text-xl font-medium mb-4\">"+_vm._ssrEscape("\n\n                "+_vm._s(post.title)+"\n            ")+"</h1> "),_c('nuxt-content',{attrs:{"document":post}})],2)})],2)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/index.vue?vue&type=template&id=3ce43cea&
+// CONCATENATED MODULE: ./pages/index.vue?vue&type=template&id=1ee0056e&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/index.vue?vue&type=script&lang=js&
 //
@@ -97,10 +97,16 @@ var staticRenderFns = []
     $content,
     params
   }) {
-    const posts = await $content("posts").fetch();
-    return {
-      posts
-    };
+    try {
+      const posts = await $content("posts").fetch();
+      return {
+        posts
+      };
+    } catch {
+      err => {
+        console.log(err);
+      };
+    }
   }
 
 });

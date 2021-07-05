@@ -5,7 +5,7 @@
                 <img class="h-full w-full rounded-full" src="../static/pic.jpeg" alt="">
             </div>
             <h2 class="md:text-2xl text-xl font-medium mb-2">Привет, я — Костя 🖖</h2>
-            <p class="md:text-lg text-base font-normal mb-4">Днем преподаю английский, по ночам пишу код. Здесь документирую: что делаю, что сделал, что узнал нового, что получилось, что не получилось и т.п.</p>
+            <p class="md:text-lg text-base font-normal mb-4">Днем преподаю английский, по ночам пишу код. Здесь документирую: что делаю, что сделал, что узнал нового, что получилось и т.п.</p>
             <div v-for="post in posts" :key="post.slug" class="border-b border-gray-200 border-dashed py-12">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-400 mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -25,8 +25,14 @@
 <script>
 export default {
     async asyncData({ $content, params }) {
-        const posts = await $content("posts").fetch();
-        return { posts };
+        try {
+            const posts = await $content("posts").fetch();
+            return { posts };
+        } catch {
+            (err) => {
+                console.log(err);
+            };
+        }
     },
 };
 </script>
