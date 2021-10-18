@@ -26,7 +26,7 @@
 export default {
     async asyncData({ $content, params }) {
         try {
-            const posts = await $content("posts").fetch();
+            const posts = await $content("posts").sortBy('date', 'asc').fetch();
             return { posts };
         } catch {
             (err) => {
