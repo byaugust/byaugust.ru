@@ -12,10 +12,12 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                 </span>
-                <h1 class="text-xl font-medium mb-4">
-
+                <h1 class="text-xl font-medium mb-1">
                     {{ post.title }}
                 </h1>
+                <p class="text-xs mb-4" style="color: #666666;">
+                    {{ get_date(post.date) }}
+                </p>
                 <nuxt-content :document="post" />
             </div>
         </div>
@@ -23,10 +25,12 @@
 </template>
 
 <script>
+import * as dayjs from "dayjs"
+import 'dayjs/locale/ru'
 export default {
     async asyncData({ $content, params }) {
         try {
-            const posts = await $content("posts").sortBy('date', 'asc').fetch();
+            const posts = await $content("posts").sortBy('date', 'desc').fetch();
             return { posts };
         } catch {
             (err) => {
@@ -34,6 +38,11 @@ export default {
             };
         }
     },
+    methods: {
+        get_date(date) {
+            return dayjs.unix(date).locale('ru').format('DD MMMM YYYY')
+        }
+    }
 };
 </script>
 <style lang="css">
