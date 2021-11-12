@@ -1,6 +1,6 @@
 <template>
-    <div class="image-container mb-6">
-        <img :src="src" class="shadow-xl rounded-xl" :alt="src">
+    <div class="image-container mb-6 p-1 rounded" style="background: #FBFBFB">
+        <img :src="src" class="rounded" :alt="src">
     </div>
 </template>
 

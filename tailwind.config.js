@@ -3,6 +3,11 @@ module.exports = {
     purge: [],
     darkMode: false, // or 'media' or 'class'
     theme: {
+        fontFamily: {
+            main: 'proxima-nova, sans-serif',
+            title: 'futura-pt, sans-serif',
+            article: 'Noto Serif, Georgia'
+        },
         extend: {
             colors: {
                 'dark-333': '#333',

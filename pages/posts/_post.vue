@@ -27,6 +27,11 @@ export default {
             };
         }
     },
+    head() {
+        return {
+            title: this.post?.title ? this.post.title : ''
+        }
+    },
     methods: {
         get_date(date) {
             return dayjs.unix(date).locale('ru').format('DD MMM YYYY')

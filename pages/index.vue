@@ -5,7 +5,8 @@
                 <img class="h-full w-full rounded-full" src="../static/pic.jpeg" alt="">
             </div>
             <h2 class="md:text-2xl text-xl font-medium mb-2">Привет, я — Костя 🖖</h2>
-            <p class="md:text-xl text-lg text-dark-555 font-normal mb-12">Днем преподаю английский, по ночам пишу код. Здесь документирую: что делаю, что сделал, что узнал нового, что получилось и т.п.</p>
+            <p class="md:text-xl text-lg text-dark-555 font-normal mb-6">Преподаю английский, пишу код, учусь в университете искусственного интеллекта, создаю проект <a class="link text-blue-600" href="https://speakny.me">speakny.me</a>.</p>
+            <p class="md:text-xl text-lg text-dark-555 font-normal mb-12">Здесь документирую: что делаю, что сделал, что узнал нового, что получилось и т.п.</p>
             <h2 class="text-2xl font-medium mb-3">Блог</h2>
             <postpreview v-for="post in posts" :key="post.slug" :post="post" />
         </div>

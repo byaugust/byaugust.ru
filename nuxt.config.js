@@ -1,5 +1,4 @@
 export default {
-
     ssr: true,
     components: true,
     head: {
@@ -17,10 +16,7 @@ export default {
      ** Customize the progress-bar color
      */
     loading: { color: '#fff' },
-    /*
-     ** Global CSS
-     */
-    css: [],
+    css: ["@/assets/css/tailwind.css"],
     /*
      ** Plugins to load before mounting the App
      */

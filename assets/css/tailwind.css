@@ -1,0 +1,69 @@
+/* purgecss start ignore */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+/* purgecss end ignore */
+
+@import 'tailwindcss/utilities';
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    max-width: 100% !important;
+    min-height: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    @apply relative;
+}
+
+::-webkit-scrollbar {
+    /* display: none; */
+    /* overflow-y: scroll; */
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F5F5F5;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-thumb {
+    background: #E5E5E5;
+    border-radius: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li,
+a,
+td,
+tr,
+input {
+    @apply font-main;
+}
+
+.link {
+    box-shadow: 0 10px 0 0 rgb(85 172 238 / 0%), inset 0 -0.125em rgb(85 172 238 / 20%);
+    padding: 0 2px 2px;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+    -webkit-transition-property: box-shadow, color;
+    transition-property: box-shadow, color;
+}
+
+.link:hover {
+    box-shadow: 0 1px 0 2px rgba(96, 165, 250, .1), inset 0 -1.375em 0 rgba(96, 165, 250, .1);
+    border-radius: 2px;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+    -webkit-transition-property: box-shadow, color;
+    transition-property: box-shadow, color;
+}
