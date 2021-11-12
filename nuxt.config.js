@@ -1,6 +1,6 @@
 export default {
 
-    ssr: true,
+    ssr: false,
     components: true,
     head: {
         title: 'Константин Вороной',

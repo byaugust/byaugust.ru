@@ -1,33 +1,23 @@
 <template>
-    <div class="w-full mx-auto h-full py-0 my-0 ">
-        <div class="lg:w-6/12 w-full md:w-10/12 mx-auto lg:py-24 md:py-16 py-8 px-4 md:px-0">
+    <div class="w-full mx-auto h-full py-0 my-0">
+        <div class="lg:w-6/12 w-full md:w-10/12 mx-auto pt-8 pb-24 px-6 md:px-8">
             <div class="w-40 h-40 rounded-full shadow-sm mb-6">
                 <img class="h-full w-full rounded-full" src="../static/pic.jpeg" alt="">
             </div>
             <h2 class="md:text-2xl text-xl font-medium mb-2">Привет, я — Костя 🖖</h2>
-            <p class="md:text-xl text-lg font-normal mb-4">Днем преподаю английский, по ночам пишу код. Здесь документирую: что делаю, что сделал, что узнал нового, что получилось и т.п.</p>
-            <div v-for="post in posts" :key="post.slug" class="border-b border-gray-200 border-dashed py-12">
-                <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-400 mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                </span>
-                <h1 class="text-xl font-medium mb-1">
-                    {{ post.title }}
-                </h1>
-                <p class="text-base mb-4" style="color: #666666;">
-                    {{ get_date(post.date) }}
-                </p>
-                <nuxt-content class="content" :document="post" />
-            </div>
+            <p class="md:text-xl text-lg text-dark-555 font-normal mb-12">Днем преподаю английский, по ночам пишу код. Здесь документирую: что делаю, что сделал, что узнал нового, что получилось и т.п.</p>
+            <h2 class="text-2xl font-medium mb-3">Блог</h2>
+            <postpreview v-for="post in posts" :key="post.slug" :post="post" />
         </div>
     </div>
 </template>
 
 <script>
-import * as dayjs from "dayjs"
-import 'dayjs/locale/ru'
+import postpreview from "~/components/posts/post-preview.vue"
 export default {
+    components: {
+        postpreview
+    },
     async asyncData({ $content, params }) {
         try {
             const posts = await $content("posts").sortBy('date', 'desc').fetch();
@@ -37,22 +27,8 @@ export default {
                 console.log(err);
             };
         }
-    },
-    methods: {
-        get_date(date) {
-            return dayjs.unix(date).locale('ru').format('DD MMMM YYYY')
-        }
     }
 };
 </script>
-<style lang="css">
-.content p {
-    @apply mb-6 text-xl font-normal;
-    color: #333333;
-}
-.content h3 {
-    @apply mb-6 text-xl font-medium;
-    color: #000000;
-}
-</style>
+
 

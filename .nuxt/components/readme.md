@@ -7,3 +7,5 @@ You can directly use them in pages and other components without the need to impo
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
 - `<BaseImg>` | `<base-img>` (components/global/base-img.vue)
+- `<BaseNavbar>` | `<base-navbar>` (components/global/base-navbar.vue)
+- `<PostsPostPreview>` | `<posts-post-preview>` (components/posts/post-preview.vue)

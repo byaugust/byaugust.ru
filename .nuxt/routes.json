@@ -1,5 +1,12 @@
 [
   {
+    "name": "posts-post",
+    "path": "/posts/:post?",
+    "component": "/Users/konstantinvoronoy/Sites/konstantinvoronoy/pages/posts/_post.vue",
+    "chunkName": "pages/posts/_post",
+    "_name": "_9c1e675e"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Users/konstantinvoronoy/Sites/konstantinvoronoy/pages/index.vue",
