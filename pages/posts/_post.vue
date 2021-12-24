@@ -4,7 +4,7 @@
             <h1 class="text-3xl font-medium mb-3">
                 {{ post.title }}
             </h1>
-            <p class="text-base font-medium mb-6 text-dark-666">
+            <p class="text-base font-normal mb-6 text-dark-666">
                 {{ get_date(post.date) }}
             </p>
             <nuxt-content class="content " :document="post" />

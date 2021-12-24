@@ -4,7 +4,7 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         fontFamily: {
-            main: 'proxima-nova, sans-serif',
+            main: 'IBM Plex Sans, sans-serif',
             title: 'futura-pt, sans-serif',
             article: 'Noto Serif, Georgia'
         },

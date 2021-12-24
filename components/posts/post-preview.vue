@@ -9,7 +9,7 @@
             <h2 class="text-xl font-medium mb-0" :class="hovered ? 'text-dark-333' : 'text-dark-444'">
                 {{ post.title }}
             </h2>
-            <p class="text-base font-medium" :class="hovered ? 'text-dark-555' : 'text-dark-666'">
+            <p class="text-base font-normal" :class="hovered ? 'text-dark-555' : 'text-dark-666'">
                 {{ get_date(post.date) }}
             </p>
         </div>
