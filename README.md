@@ -1,4 +1,8 @@
-### Привет 👋
+### Привет, я — Костя 🖖
+Преподаю английский, пишу код, учусь в университете искусственного интеллекта, создаю проект speakny.me.
+
+### Hey, I'm Kostya 🖖
+I teach English, write some code, study at The University of Artificial Intelligence and make a project speakny.me
 
 <!--
 **konstantinvoronoy/konstantinvoronoy** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
