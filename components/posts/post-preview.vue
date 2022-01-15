@@ -6,16 +6,15 @@
             </svg>
         </div>
         <div @mouseover="hovered = true" @mouseleave="hovered = false">
-            <h2 class="text-xl font-medium mb-0" :class="hovered ? 'text-dark-333' : 'text-dark-444'">
+            <h2 class="text-xl font-medium mb-0 text-dark-444 dark:text-dark-20" :class="{'opacity-90' : hovered}">
                 {{ post.title }}
             </h2>
-            <p class="text-base font-normal" :class="hovered ? 'text-dark-555' : 'text-dark-666'">
+            <p class="text-base font-normal text-dark-666 dark:text-dark-999" :class="{'opacity-90' : hovered}">
                 {{ get_date(post.date) }}
             </p>
         </div>
     </nuxt-link>
 </template>
-
 <script>
 import * as dayjs from "dayjs"
 import 'dayjs/locale/ru'

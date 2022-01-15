@@ -24,7 +24,7 @@ export default {
     /*
      ** Nuxt.js dev-modules
      */
-    buildModules: ['@nuxtjs/tailwindcss'],
+    buildModules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode'],
     /*
      ** Nuxt.js modules
      */
@@ -37,5 +37,8 @@ export default {
          ** You can extend webpack config here
          */
         extend(config, ctx) {}
+    },
+    colorMode: {
+        classSuffix: ""
     }
 }
