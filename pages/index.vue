@@ -15,7 +15,10 @@
             <p class="md:text-xl text-lg text-dark-555 dark:text-dark-20 font-normal mb-12">Здесь документирую понемногу свое путешествие.</p>
 
             <h2 class="text-2xl text-black dark:text-dark-20 font-medium mb-3">Блог</h2>
-            <postPreview v-for="post in posts" :key="post._id" :post="post" />
+            
+            <ContentList path="/posts" v-slot="{ list }" :query="{ sort: { date:-1, $numeric: true } }">
+                <postPreview v-for="post in list" :key="post._id" :post="post" />   
+            </ContentList>
         </div>
     </div>
 </template>
@@ -23,5 +26,4 @@
 useHead({
     title: 'augustjourney'
 })
-const posts = await queryContent('/').sort({ date: 0}).only(['title', '_id', '_path', 'date']).find() || []
 </script>
