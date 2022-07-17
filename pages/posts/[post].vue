@@ -19,7 +19,7 @@ import 'dayjs/locale/ru'
 const { path } = useRoute()
 const post = await queryContent('/').only(['title', 'date']).where({ _path: path }).findOne()
 useHead({
-    title: post.value.title
+    title: post?.value?.title || ''
 })
 async function get_date(date) {
     return dayjs.unix(date).locale('ru').format('DD MMM YYYY')
