@@ -23,5 +23,5 @@
 useHead({
     title: 'augustjourney'
 })
-const posts = await queryContent('/').sort({ date: 1}).only(['title', '_id', '_path', 'date']).find() || []
+const posts = await queryContent('/').sort({ date: 0}).only(['title', '_id', '_path', 'date']).find() || []
 </script>
