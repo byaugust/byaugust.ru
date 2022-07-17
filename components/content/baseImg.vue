@@ -4,12 +4,6 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'base-img',
-    props: {
-        src: String,
-        alt: String
-    }
-}
+<script setup>
+defineProps(['src', 'alt'])
 </script>
